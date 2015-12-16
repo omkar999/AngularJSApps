@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html ng-app>
+<head>
+<title>My Angular JS App</title>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+</head>
+<body>
+Filter By Name : <input type="text" ng-model="name"/>
+ <div ng-init="names=['omkar','muzeeb','ravindra','nikhil']">
+<ol>
+	<li ng-repeat="name in names | filter:name | orderBy:name  ">
+		{{name}}
+	</li>
+</ol>
+ 
+ </div>
+
+</body>
+</html>

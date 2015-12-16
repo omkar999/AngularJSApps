@@ -1,0 +1,21 @@
+<div>
+Search : <input type="text" ng-model="searchtext"/>
+<ol>
+	<li ng-repeat="cust in customers | filter:searchtext | orderBy:name">
+		{{cust.name | uppercase}} - {{cust.city | lowercase}}
+	</li>
+</ol>
+
+
+RESTful Response : {{$scope.rest}}
+
+<h4>Add Customer</h4> 
+Customer Name : <input type=text ng-model="newCustomer.name"/>
+<br/>
+Customer City : <input type=text ng-model="newCustomer.city"/>
+<br/>
+<button ng-click="addCustomer()">Add Customer</button>
+
+<br/><br/>
+<a href="#/hello"/>Hello test link</a>
+</div>
