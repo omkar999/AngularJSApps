@@ -1,7 +1,9 @@
 var app = angular.module("firstAngularApp", [ 'ngRoute' ]);
 
 app.factory('myFactory', function($http) {
-	var customers = [ {
+	var customers = [];
+	
+	/*var customers = [ {
 		name : 'Omkar',
 		city : 'Hyderabad'
 	}, {
@@ -13,31 +15,28 @@ app.factory('myFactory', function($http) {
 	}, {
 		name : 'Ravindra',
 		city : 'Hyderabad'
-	} ];
+	} ];*/
+	
+	
+	/*$http.get('/someUrl', config).then(successCallback, errorCallback);*/
+	
+	
+	$http.get('http://localhost:8080/hello/user').then(function(response){
+		alert(response.data);
+		 customers = response.data;
+	}, function(response){
+		alert("error");
+	});
 	
 	/*$http({
 		  method: 'GET',
-		  url: 'http://localhost:8080/hello/omkar'
+		  url: 'http://localhost:8080/hello/user'
 		}).then(function successCallback(response) {
-			console.log(response);
-			 alert(response);
-		  $scope.rest=response;
+		    console.log(response.status);alert(response.data);
+		    customers = response.data;
 		  }, function errorCallback(response) {
-			  console.log(response);
-		    alert(response);
-		    $scope.rest=response;
+			    console.log('error response status = '+response.status);
 		  });
-*/
-	/*
-	$http.get('').then(function(response) {
-		$scope.restresponse = response.data;
-		console.log(restresponse)
-	}, function(error) {
-		console.log(error)
-		alert(error.status );
-	}, function(er) {
-		alert(error.er);
-	})
 	*/
 	
 	var factory = {};
@@ -53,8 +52,8 @@ app.controller('MyController', function($scope, myFactory) {
 	$scope.hello = "Hello World!!!";
 	$scope.addCustomer = function() {
 		$scope.customers.push({
-			name : $scope.newCustomer.name,
-			city : $scope.newCustomer.city
+			name : $scope.newcust.name,
+			city : $scope.newcust.city
 		});
 	};
 });
@@ -70,6 +69,8 @@ app.config([ '$routeProvider', function($routeProvider) {
 		redirectTo : '/'
 	});
 } ]);
+
+
 
 
 
