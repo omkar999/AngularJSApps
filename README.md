@@ -1,18 +1,19 @@
 # AngularJSApps
 
-Simple apps with
+AngularJS apps with
 
 Directives
 -------------------------------------
-ng-model
-ng-controller
-ng-app
-ng-init
+ng-model,
+ng-controller,
+ng-app,
+ng-init,
 ng-repeat
 
-provider
+Provider
 ---------------------------------------
 $routeProvider
 
-filters
 
+Filters
+-----------
