@@ -10,9 +10,13 @@ ng-app,
 ng-init,
 ng-repeat
 
-Provider
----------------------------------------
-$routeProvider
+
+$routeProvider, $http, $q
+
+var myapp = angular.module('firstApp',[])
+firstApp.config()
+firstApp.factory()
+firstApp.controller()
 
 
 Filters
